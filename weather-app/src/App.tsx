@@ -2,9 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+//import dotenv from 'dotenv';
 
 function App() {
+  //dotenv.config();
   const [count, setCount] = useState(0)
+  const apiKey = import.meta.env.VITE_API_KEY;
+  console.log(apiKey);
 
   return (
     <>
