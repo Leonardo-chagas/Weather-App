@@ -1,0 +1,12 @@
+#weather-container {
+display: block;
+border: solid 2px black;
+border-radius: 20px;
+place-items: center;
+align-items: center;
+}
+
+#weather-content {
+display: flex;
+flex-direction: row;
+}

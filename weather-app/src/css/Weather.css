@@ -1,0 +1,17 @@
+.temp-content {
+display: flex;
+flex-direction: row;
+}
+
+.max-temp {
+color: red;
+}
+
+.min-temp {
+color: blue;
+}
+
+.semitransparent-bg {
+    background-color: rgba(200, 200, 200, 0.3);
+    box-shadow: 1px 1px 5px 10px rgba(255, 255, 255, 0.6);
+}

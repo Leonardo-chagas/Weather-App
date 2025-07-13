@@ -1,0 +1,6 @@
+#forecast-content {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px black;
+    border-radius: 10px;
+}
