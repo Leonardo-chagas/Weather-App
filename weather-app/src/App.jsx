@@ -3,10 +3,9 @@ import axios from 'axios'
 import './App.css'
 import CurrentDay from './Components/CurrentDay';
 import ForecastDay from './Components/ForecastDay';
-//import dotenv from 'dotenv';
+import CitySearch from './Components/CitySearch';
 
 function App() {
-  //dotenv.config();
   const days = '7';
   const [currentDay, setCurrentDay] = useState();
   const [forecastDays, setForecastDays] = useState([]);
@@ -63,10 +62,17 @@ function App() {
     setInputValue(event.target.value);
   }
 
+  const handleOnSearchChange = (searchData) => {
+
+  }
+
   return (
-    <>
-        <input placeholder='Search city' onChange={handleCityChange}></input>
+    <main>
+      <div id='input-container'>
+        {/* <input placeholder='Search city' onChange={handleCityChange}></input> */}
+        <CitySearch onSearchChange={handleOnSearchChange}/>
         <button onClick={() => setCity(inputValue)}>Search</button>
+      </div>
         {currentDay 
         ? <CurrentDay city={city} date={currentDay.date} avgtemp={currentDay.avgtemp} maxtemp={currentDay.maxtemp} mintemp={currentDay.mintemp} maxwind={currentDay.maxwind} chance_of_rain={currentDay.chance_of_rain} totalprecip={currentDay.totalprecip} icon={currentDay.icon}/> 
         : null}
@@ -78,7 +84,7 @@ function App() {
           )
         : null}
       </div>
-    </>
+    </main>
   )
 }
 

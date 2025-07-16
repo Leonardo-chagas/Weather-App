@@ -17,7 +17,7 @@ export default function CurrentDay({city, date, avgtemp, maxtemp, mintemp, maxwi
                 <div>
                     {chance_of_rain > 0
                     ? <div>
-                        <p>{chance_of_rain}</p>
+                        <p>{chance_of_rain}%</p>
                         <p>{totalprecip}mm</p>
                     </div>
                     : null}

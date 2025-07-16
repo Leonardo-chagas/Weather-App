@@ -10,3 +10,11 @@
   flex-direction: row;
   max-width: 600px;
 }
+
+#forecast-container .forecast-content {
+  margin-right: calc(5px + 1.5625vw);
+}
+
+#forecast-container:last-child {
+  margin-right: 0;
+}
