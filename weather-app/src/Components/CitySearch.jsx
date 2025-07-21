@@ -52,6 +52,7 @@ export default function CitySearch({onSearchChange}) {
             ...provided,
             borderRadius: '5px',
             border: '2px solid #ccc',
+            marginBottom: 'calc(1px + 0.7vw)',
             boxShadow: state.isFocused ? '0 0 0 2px #3699FF' : null,
         }),
         option: (provided, state) => ({

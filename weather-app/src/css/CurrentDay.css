@@ -1,20 +1,37 @@
 #weather-container {
 display: block;
-border: solid 2px black;
+border: solid 2px rgb(105, 105, 105);
 border-radius: 20px;
-place-items: center;
-align-items: center;
+/* place-items: center; */
+align-content: center;
 margin-bottom: calc(1px + 1vw);
+padding: 0;
+max-width: 600px;
 }
 
 #weather-content {
 display: flex;
 flex-direction: row;
+/* max-width: 500px; */
+justify-content: center;
+/* width: 300px; */
+/* background-color: red; */
+/* margin-inline: auto; */
+/* background-color: aqua; */
 }
 
 img {
     display: block;
     width: 100%;
-    max-width: 200px;
+    max-width: 600px;
     height: auto;
+}
+
+#icon-container {
+    max-width: 100px;
+    flex-grow: 1;
+    align-content: center;
+    /* width: 100%; */
+    /* background-color: red; */
+    /* width: 300px; */
 }

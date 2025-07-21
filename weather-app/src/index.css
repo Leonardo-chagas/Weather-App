@@ -24,16 +24,21 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  align-content: center;
   min-height: 100vh;
   background-image: url("sky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h1, h2 {
+  color: #242424;
 }
 
 button {

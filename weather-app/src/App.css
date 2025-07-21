@@ -5,16 +5,22 @@
   text-align: center;
 }
 
-#forecast-container {
+#forecast-area {
   display: flex;
   flex-direction: row;
   max-width: 600px;
 }
 
-#forecast-container .forecast-content {
+#forecast-area .forecast-container {
   margin-right: calc(5px + 1.5625vw);
 }
 
-#forecast-container:last-child {
+#forecast-area:last-child {
   margin-right: 0;
+}
+
+main {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
 }

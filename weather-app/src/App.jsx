@@ -31,7 +31,7 @@ function App() {
               'mintemp': Math.floor(forecast.day.mintemp_c),
               'maxwind': Math.floor(forecast.day.maxwind_kph),
               'chance_of_rain': Math.floor(forecast.day.daily_chance_of_rain),
-              'totalprecip': Math.floor(forecast.day.totalprecip_mm),
+              'totalprecip': forecast.day.totalprecip_mm,
               'icon': forecast.day.condition.icon
             }
           }
@@ -41,7 +41,7 @@ function App() {
               'maxtemp': Math.floor(forecast.day.maxtemp_c),
               'mintemp': Math.floor(forecast.day.mintemp_c),
               'chance_of_rain': Math.floor(forecast.day.daily_chance_of_rain),
-              'totalprecip': Math.floor(forecast.day.totalprecip_mm),
+              'totalprecip': forecast.day.totalprecip_mm,
               'icon': forecast.day.condition.icon
             };
             forecastData.push(element);
@@ -58,12 +58,12 @@ function App() {
     });
   }, [city]);
 
-  const handleCityChange = (event) => {
+  /* const handleCityChange = (event) => {
     setInputValue(event.target.value);
-  }
+  } */
 
   const handleOnSearchChange = (searchData) => {
-
+    setCity(searchData.value);
   }
 
   return (
@@ -71,13 +71,13 @@ function App() {
       <div id='input-container'>
         {/* <input placeholder='Search city' onChange={handleCityChange}></input> */}
         <CitySearch onSearchChange={handleOnSearchChange}/>
-        <button onClick={() => setCity(inputValue)}>Search</button>
+        {/* <button onClick={() => setCity(inputValue)}>Search</button> */}
       </div>
         {currentDay 
         ? <CurrentDay city={city} date={currentDay.date} avgtemp={currentDay.avgtemp} maxtemp={currentDay.maxtemp} mintemp={currentDay.mintemp} maxwind={currentDay.maxwind} chance_of_rain={currentDay.chance_of_rain} totalprecip={currentDay.totalprecip} icon={currentDay.icon}/> 
         : null}
       
-      <div id={'forecast-container'}>
+      <div id={'forecast-area'}>
         {forecastDays.length > 0
           ? forecastDays.map((day, key) => 
             <ForecastDay date={day.date} maxtemp={day.maxtemp} mintemp={day.mintemp} chance_of_rain={day.chance_of_rain} totalprecip={day.totalprecip} icon={day.icon}/>
@@ -85,7 +85,7 @@ function App() {
         : null}
       </div>
     </main>
-  )
+  );
 }
 
 export default App
