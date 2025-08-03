@@ -8,9 +8,15 @@
     flex-direction: column;
     border: solid 2px rgb(105, 105, 105);
     border-radius: 10px;
+    flex: 1 1 0px;
+    max-width: 150px;
+}
+
+.forecast-container p {
+    font-size: clamp(1rem, 1.7vw + 1rem, 1.3rem);
 }
 
 .day-of-week {
     margin-top: calc(-1px - 0.3vw);
-    margin-bottom: calc(-1px - 0.8vw);
+    margin-bottom: 0;
 }

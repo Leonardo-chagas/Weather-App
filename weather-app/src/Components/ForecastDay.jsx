@@ -20,12 +20,10 @@ export default function ForecastDay({date, maxtemp, mintemp, chance_of_rain, tot
                     <p className="min-temp">{mintemp}°</p>
                 </div>
                 </div>
-                {chance_of_rain > 0 
-                    ? <div>
-                        <p>{chance_of_rain}%</p>
-                        <p>{totalprecip}mm</p>
-                    </div>
-                    : null}
+                <div className="rain-content" style={{visibility: chance_of_rain > 0 ? 'visible': 'hidden'}}>
+                    <p>{chance_of_rain}%</p>
+                    <p>{Math.round(totalprecip*10)/10}mm</p>
+                </div>
             </div>
         </div>
     )

@@ -12,24 +12,6 @@ export default function CitySearch({onSearchChange}) {
         onSearchChange(searchData);
     }
 
-    /* const loadOptions = (inputValue) => {
-        axios.get("http://api.weatherapi.com/v1/search.json?key="+apiKey+"&q="+inputValue).then(
-            response => {
-                console.log(response.data);
-                return{
-                    options: response.data.map((city) => {
-                        return {
-                            value: city.name,
-                            label: `${city.name}, ${city.region}`,
-                        };
-                    }),
-                };
-            }
-        ).catch(error=> {
-      console.error(error);
-    });
-    } */
-
     const loadOptions = async (inputValue) => {
         try{
             const response = await axios.get("http://api.weatherapi.com/v1/search.json?key="+apiKey+"&q="+inputValue)
@@ -52,8 +34,10 @@ export default function CitySearch({onSearchChange}) {
             ...provided,
             borderRadius: '5px',
             border: '2px solid #ccc',
+            margin: '0 auto',
             marginBottom: 'calc(1px + 0.7vw)',
             boxShadow: state.isFocused ? '0 0 0 2px #3699FF' : null,
+            maxWidth: '600px',
         }),
         option: (provided, state) => ({
             ...provided,

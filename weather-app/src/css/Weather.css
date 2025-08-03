@@ -1,8 +1,10 @@
 .temp-content {
 display: flex;
 flex-direction: row;
-margin: 0;
-padding: 0;
+}
+
+.temp-content > p {
+    margin: 0;
 }
 
 .max-temp {
@@ -18,33 +20,25 @@ color: blue;
     box-shadow: 1px 1px 5px 10px rgba(255, 255, 255, 0.6);
 }
 
-.wind-rain-content {
+.wind-temp-content {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around;
-    align-content: flex-start; */
-    /* background-color: blueviolet; */
-    padding: 0;
+    padding-top: calc(1px + 1vw);
+}
+
+.wind-temp-content > * {
     margin: 0;
+    padding: 0;
 }
 
 .rain-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-content: flex-start;
-    /* background-color: aqua; */
     margin: 0;
     padding: 0;
 }
 
 .rain-content > p {
-    margin: 0;
-    padding: 0;
-}
-
-.test {
-    /* background-color: red; */
     margin: 0;
     padding: 0;
 }

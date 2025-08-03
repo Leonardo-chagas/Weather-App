@@ -8,22 +8,18 @@ export default function CurrentDay({city, date, avgtemp, maxtemp, mintemp, maxwi
             <div id="weather-content">
                 <div id="icon-container">
                     <img src={icon}></img>
+                    <div className="rain-content" style={{visibility: chance_of_rain > 0 ? 'visible': 'hidden'}}>
+                        <p>{chance_of_rain}%</p>
+                        <p>{Math.round(totalprecip*10)/10}mm</p>
+                    </div>
+                </div>
+                <div className="wind-temp-content">
                     <div className="temp-content">
                         <p className="max-temp">{maxtemp}°</p>
                         <p> / </p>
                         <p className="min-temp">{mintemp}°</p>
                     </div>
-                </div>
-                <div className="wind-rain-content">
-                    {chance_of_rain > 0
-                    ? <div className="rain-content">
-                        <p>{chance_of_rain}%</p>
-                        <p>{totalprecip}mm</p>
-                    </div>
-                    : null}
-                    {/* <div> */}
-                        <p className="test">{maxwind}km/h</p>
-                    {/* </div> */}
+                    <p>{maxwind}km/h</p>
                 </div>
             </div>
         </div>

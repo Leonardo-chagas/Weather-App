@@ -8,19 +8,14 @@
 #forecast-area {
   display: flex;
   flex-direction: row;
-  max-width: 600px;
-}
-
-#forecast-area .forecast-container {
-  margin-right: calc(5px + 1.5625vw);
-}
-
-#forecast-area:last-child {
-  margin-right: 0;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 2rem;
+  margin-top: calc(1px + 1vw);
 }
 
 main {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin-inline: auto;
 }

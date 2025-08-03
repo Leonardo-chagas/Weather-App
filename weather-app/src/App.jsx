@@ -10,8 +10,6 @@ function App() {
   const [currentDay, setCurrentDay] = useState();
   const [forecastDays, setForecastDays] = useState([]);
   const [city, setCity] = useState('london');
-  const [inputValue, setInputValue] = useState('');
-  const test = true;
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
@@ -58,10 +56,6 @@ function App() {
     });
   }, [city]);
 
-  /* const handleCityChange = (event) => {
-    setInputValue(event.target.value);
-  } */
-
   const handleOnSearchChange = (searchData) => {
     setCity(searchData.value);
   }
@@ -69,9 +63,7 @@ function App() {
   return (
     <main>
       <div id='input-container'>
-        {/* <input placeholder='Search city' onChange={handleCityChange}></input> */}
         <CitySearch onSearchChange={handleOnSearchChange}/>
-        {/* <button onClick={() => setCity(inputValue)}>Search</button> */}
       </div>
         {currentDay 
         ? <CurrentDay city={city} date={currentDay.date} avgtemp={currentDay.avgtemp} maxtemp={currentDay.maxtemp} mintemp={currentDay.mintemp} maxwind={currentDay.maxwind} chance_of_rain={currentDay.chance_of_rain} totalprecip={currentDay.totalprecip} icon={currentDay.icon}/> 
