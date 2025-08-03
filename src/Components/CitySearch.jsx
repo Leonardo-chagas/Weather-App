@@ -18,7 +18,7 @@ export default function CitySearch({onSearchChange}) {
             return{
                 options: response.data.map((city) => {
                     return {
-                        value: city.name,
+                        value: city.id,
                         label: `${city.name}, ${city.region}`,
                     };
                 }),

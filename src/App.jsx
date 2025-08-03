@@ -9,20 +9,22 @@ function App() {
   const days = '7';
   const [currentDay, setCurrentDay] = useState();
   const [forecastDays, setForecastDays] = useState([]);
-  const [city, setCity] = useState('london');
+  const [city, setCity] = useState('2801268');
 
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
-    axios.get('http://api.weatherapi.com/v1/forecast.json?key='+apiKey+'&q='+city+'&days='+days+'&aqi=no&alerts=no').then(
+    axios.get('http://api.weatherapi.com/v1/forecast.json?key='+apiKey+'&q=id:'+city+'&days='+days+'&aqi=no&alerts=no').then(
       response => {
         const apiInfo = response.data;
         let forecastData = [];
         let current;
         let i = 0;
+        const cityName = apiInfo.location.name;
         apiInfo.forecast.forecastday.forEach(forecast => {
           if(i < 1){
             current={
+              'city': cityName,
               'date': forecast.date,
               'avgtemp': Math.floor(forecast.day.avgtemp_c),
               'maxtemp': Math.floor(forecast.day.maxtemp_c),
@@ -66,7 +68,7 @@ function App() {
         <CitySearch onSearchChange={handleOnSearchChange}/>
       </div>
         {currentDay 
-        ? <CurrentDay city={city} date={currentDay.date} avgtemp={currentDay.avgtemp} maxtemp={currentDay.maxtemp} mintemp={currentDay.mintemp} maxwind={currentDay.maxwind} chance_of_rain={currentDay.chance_of_rain} totalprecip={currentDay.totalprecip} icon={currentDay.icon}/> 
+        ? <CurrentDay city={currentDay.city} date={currentDay.date} avgtemp={currentDay.avgtemp} maxtemp={currentDay.maxtemp} mintemp={currentDay.mintemp} maxwind={currentDay.maxwind} chance_of_rain={currentDay.chance_of_rain} totalprecip={currentDay.totalprecip} icon={currentDay.icon}/> 
         : null}
       
       <div id={'forecast-area'}>
